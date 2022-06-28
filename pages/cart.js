@@ -12,6 +12,14 @@ const Cart = () => {
     cart: { cartItems },
   } = state;
 
+  const handleChangeQuantity = (item, qty) => {
+    const quantity = Number(qty);
+    dispatch({
+      type: "CART_ADD_ITEM",
+      payload: { ...item, quantity },
+    });
+  };
+
   const handleDeleteItem = (item) => {
     dispatch({
       type: "CART_DELETE_ITEM",
@@ -53,9 +61,19 @@ const Cart = () => {
                     </Link>
                   </td>
                   <td className="p-4 text-right">
-                    <select name="" id="">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
+                    <select
+                      name=""
+                      id=""
+                      className="border p-2 rounded"
+                      onChange={(e) =>
+                        handleChangeQuantity(item, e.target.value)
+                      }
+                    >
+                      {[...Array(item.countInStock).keys()].map((item) => (
+                        <option key={item + 1} value={item + 1}>
+                          {item + 1}
+                        </option>
+                      ))}
                     </select>
                   </td>
                   <td className="p-4 text-right">${item.price}</td>
