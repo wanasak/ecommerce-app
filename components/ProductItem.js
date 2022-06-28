@@ -4,8 +4,10 @@ import React from "react";
 const ProductItem = ({ product }) => {
   return (
     <div className="card">
-      <Link href={product.slug}>
-        <img src={product.image} alt={product.name} />
+      <Link href={`/product/${product.slug}`}>
+        <a>
+          <img src={product.image} alt={product.name} />
+        </a>
       </Link>
       <div className="p-4 flex flex-col items-center justify-center ">
         <Link href={product.slug}>
