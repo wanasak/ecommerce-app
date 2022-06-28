@@ -8,8 +8,8 @@ import { Store } from "../../utils/Store";
 
 const ProductScreen = () => {
   const { state, dispatch } = useContext(Store);
-
-  const { query } = useRouter();
+  const router = useRouter();
+  const { query } = router;
   const { slug } = query;
   const product = data.products.find((product) => product.slug === slug);
   if (!product) {
@@ -21,7 +21,7 @@ const ProductScreen = () => {
       (product) => product.slug === slug
     );
     const quantity = existItem ? existItem.quantity + 1 : 1;
-    if (quantity > existItem.countInStock) {
+    if (existItem && quantity > existItem.countInStock) {
       alert("Product is out of stock");
       return;
     }
@@ -32,6 +32,7 @@ const ProductScreen = () => {
         quantity,
       },
     });
+    router.push("/cart");
   };
 
   return (
@@ -39,7 +40,7 @@ const ProductScreen = () => {
       <div>
         <div className="py-2">
           <Link href="/">
-            <a>back to products</a>
+            <a className="text-blue-700">back to products</a>
           </Link>
         </div>
         <div className="grid md:grid-cols-4 md:gap-3">

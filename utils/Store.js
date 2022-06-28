@@ -29,6 +29,18 @@ function reducer(state, action) {
         },
       };
     }
+    case "CART_DELETE_ITEM": {
+      const cartItems = state.cart.cartItems.filter(
+        (item) => item.slug !== action.payload
+      );
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          cartItems,
+        },
+      };
+    }
 
     default:
       return state;

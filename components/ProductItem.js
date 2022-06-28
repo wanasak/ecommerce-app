@@ -1,23 +1,33 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const ProductItem = ({ product }) => {
+  const handleAddToCart = () => {};
   return (
     <div className="card">
       <Link href={`/product/${product.slug}`}>
         <a>
-          <img src={product.image} alt={product.name} />
+          <Image
+            src={product.image}
+            width={640}
+            height={640}
+            layout="responsive"
+            alt=""
+          />
         </a>
       </Link>
       <div className="p-4 flex flex-col items-center justify-center ">
-        <Link href={product.slug}>
+        <Link href={`/product/${product.slug}`}>
           <a>
             <h2 className="text-xl">{product.name}</h2>
           </a>
         </Link>
         <p>{product.brand}</p>
         <p>${product.price}</p>
-        <button className="primary-btn">Add to cart</button>
+        <button className="primary-btn w-32" onClick={handleAddToCart}>
+          Add to cart
+        </button>
       </div>
     </div>
   );
