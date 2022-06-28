@@ -18,3 +18,11 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.card {
+  @apply p-4 border rounded-lg shadow-sm
+}
+
+.primary-btn {
+  @apply py-2 mt-2 border rounded-md w-32 text-white bg-yellow-500 hover:bg-yellow-400 font-medium
+}
