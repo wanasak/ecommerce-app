@@ -1,3 +1,4 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -5,7 +6,7 @@ import React, { useContext } from "react";
 import Layout from "../components/Layout";
 import { Store } from "../utils/Store";
 
-const Cart = () => {
+const CartScreen = () => {
   const { state, dispatch } = useContext(Store);
   const router = useRouter();
   const {
@@ -65,6 +66,7 @@ const Cart = () => {
                       name=""
                       id=""
                       className="border p-2 rounded"
+                      value={item.quantity}
                       onChange={(e) =>
                         handleChangeQuantity(item, e.target.value)
                       }
@@ -126,4 +128,4 @@ const Cart = () => {
   );
 };
 
-export default Cart;
+export default dynamic(() => Promise.resolve(CartScreen), { ssr: false });
