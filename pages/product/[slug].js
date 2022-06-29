@@ -40,7 +40,7 @@ const ProductScreen = () => {
       <div>
         <div className="py-2">
           <Link href="/">
-            <a className="text-blue-700">back to products</a>
+            <a className="text-blue-500">back to products</a>
           </Link>
         </div>
         <div className="grid md:grid-cols-4 md:gap-3">
