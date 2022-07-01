@@ -59,6 +59,18 @@ function reducer(state, action) {
         },
       };
     }
+    case "CART_RESET": {
+      return {
+        ...state,
+        cart: {
+          cartItems: [],
+          shippingAddresses: {
+            location: {},
+          },
+          paymentMethod: "",
+        },
+      };
+    }
 
     default:
       return state;
