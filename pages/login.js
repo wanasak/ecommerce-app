@@ -49,7 +49,7 @@ const LoginScreen = () => {
         <div className="mb-4">
           <label>Email</label>
           <input
-            className="w-full border p-2 rounded"
+            className="form-input"
             type="email"
             id="email"
             {...register("email", {
@@ -67,7 +67,7 @@ const LoginScreen = () => {
         <div className="mb-4">
           <label>Password</label>
           <input
-            className="w-full border p-2 rounded"
+            className="form-input"
             type="password"
             id="password"
             {...register("password", {
