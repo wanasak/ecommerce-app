@@ -2,8 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ProductItem = ({ product }) => {
-  const handleAddToCart = () => {};
+const ProductItem = ({ product, handleAddToCart }) => {
   return (
     <div className="card">
       <Link href={`/product/${product.slug}`}>
@@ -25,7 +24,10 @@ const ProductItem = ({ product }) => {
         </Link>
         <p>{product.brand}</p>
         <p>${product.price}</p>
-        <button className="primary-btn w-32" onClick={handleAddToCart}>
+        <button
+          className="primary-btn w-32"
+          onClick={() => handleAddToCart(product)}
+        >
           Add to cart
         </button>
       </div>
