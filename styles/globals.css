@@ -26,6 +26,11 @@ a {
   @apply py-2 mt-2 border rounded-md text-white bg-yellow-500 hover:bg-yellow-400 font-medium
 }
 
+.default-btn {
+  @apply py-2 mt-2 border rounded-md hover:bg-gray-100 font-medium
+}
+
+
 .dropdown-link {
   @apply flex p-2 hover:bg-gray-200;
 }
