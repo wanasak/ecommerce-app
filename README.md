@@ -11,3 +11,7 @@
 ```
 npm run dev
 ```
+
+### Seeding data
+
+Navigate to http://localhost:3000/api/seed
