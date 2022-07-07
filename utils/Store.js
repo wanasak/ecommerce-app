@@ -65,7 +65,7 @@ function reducer(state, action) {
         ...state,
         cart: {
           cartItems: [],
-          shippingAddresses: {
+          shippingAddress: {
             location: {},
           },
           paymentMethod: "",
@@ -78,8 +78,8 @@ function reducer(state, action) {
         ...state,
         cart: {
           ...state.cart,
-          shippingAddresses: {
-            ...state.cart.shippingAddresses,
+          shippingAddress: {
+            ...state.cart.shippingAddress,
             ...action.payload,
           },
         },
@@ -92,6 +92,16 @@ function reducer(state, action) {
         cart: {
           ...state.cart,
           paymentMethod: action.payload,
+        },
+      };
+    }
+
+    case "CART_CLEAR_ITEMS": {
+      return {
+        ...state,
+        cart: {
+          ...state.cart,
+          cartItems: [],
         },
       };
     }

@@ -120,6 +120,21 @@ export default function ShippingScreen() {
         </div>
 
         <div className="mb-4">
+          <label htmlFor="city">City</label>
+          <input
+            id="city"
+            type="text"
+            className="form-input"
+            {...register("city", {
+              required: "Please enter city",
+            })}
+          />
+          {errors.city && (
+            <div className="text-red-500">{errors.city.message}</div>
+          )}
+        </div>
+
+        <div className="mb-4">
           <button className="primary-btn w-full">Next</button>
         </div>
       </form>

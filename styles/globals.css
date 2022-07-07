@@ -19,7 +19,7 @@ a {
 }
 
 .card {
-  @apply p-4 border rounded-lg shadow-sm
+  @apply p-4 mb-4 border rounded-lg shadow-sm
 }
 
 .primary-btn {
