@@ -134,7 +134,7 @@ function PlaceOrderScreen() {
             </div>
           </div>
           <div className=" card h-fit">
-            <h2>Order Summary</h2>
+            <h2 className="mb-2">Order Summary</h2>
             <div className="flex justify-between">
               <div>Items</div>
               <div>${itemsPrice}</div>

@@ -38,3 +38,11 @@ a {
 .form-input {
   @apply w-full border p-2 rounded
 }
+
+.alert-success { 
+  @apply w-full border rounded px-4 py-2 bg-green-300
+}
+
+.alert-error { 
+  @apply w-full border rounded px-4 py-2 bg-red-300
+}
